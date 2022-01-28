@@ -3,7 +3,7 @@ import 'package:intens_fl/screens/home.dart';
 import 'package:intens_fl/screens/intens.dart';
 
 void main() {
-  runApp(IntensTask());
+  runApp(const IntenseTask());
 }
 
 class MyApp extends StatelessWidget {
