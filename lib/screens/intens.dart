@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class IntenseTask extends StatelessWidget {
   const IntenseTask({Key? key}) : super(key: key);
-  static const double newFontSize = 32a;
+  static const double newFontSize = 32;
   static const double boxConstraintsHeight = 250;
   static const double boxConstraintsWidth = 300;
   static const TextStyle _myTextStyle = TextStyle(fontSize: newFontSize, color: Colors.black54);
