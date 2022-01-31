@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intens_fl/screens/home.dart';
 import 'package:intens_fl/screens/intens.dart';
+import 'package:intens_fl/screens/intens_2.dart';
 
 void main() {
-  runApp(const IntenseTask());
+  runApp(IntenseTask2());
 }
 
 class MyApp extends StatelessWidget {
