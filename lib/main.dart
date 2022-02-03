@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intens_fl/screens/home.dart';
 import 'package:intens_fl/screens/intens.dart';
 import 'package:intens_fl/screens/intens_2.dart';
+import 'package:intens_fl/screens/verst_task.dart';
 import 'package:intens_fl/widgets/my_align.dart';
 import 'package:intens_fl/widgets/my_padding.dart';
 import 'package:intens_fl/widgets/my_scaffold.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyScaffold(),
+      home: IntenseTaskVerst(),
       title: "Hell o",
     );
   }
