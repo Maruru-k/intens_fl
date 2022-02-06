@@ -32,14 +32,28 @@ class TelegramSettings extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                alignment: Alignment.center,
-                child: const Text("Settings",
-                    style: TextStyle(
-                      fontStyle: FontStyle.italic,
-                      fontSize: 17,
-                      color: Colors.black38,
-                    )),
+              Stack(
+                alignment: Alignment.centerRight,
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    child: const Text("Settings",
+                        style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontSize: 17,
+                          color: Colors.black38,
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: const SizedBox(
+                      width: 29,
+                      child: Text("Edit",
+                          style: TextStyle(
+                              fontSize: 17, color: Color(0xFF037EE5))),
+                    ),
+                  )
+                ],
               ),
               const SizedBox(height: 15),
               Container(
