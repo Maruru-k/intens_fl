@@ -9,15 +9,6 @@ class TelegramSettings extends StatelessWidget {
   final NetworkImage profileImage = const NetworkImage(
       "https://cdn.shazoo.ru/369683_NN2wYimi0M_9554_hide_pain_harold_title_red.jpg");
 
-  final TextStyle appSettingsBarTextStyle = const TextStyle(
-    fontStyle: FontStyle.italic,
-    fontSize: 17,
-    color: Colors.black38,
-  );
-  final TextStyle appBarTextStyle = const TextStyle(
-    fontSize: 17,
-    color: Colors.black38,
-  );
   final TextStyle fileInfoTextStyle = const TextStyle(
     fontSize: 15,
     color: Colors.black38,
@@ -32,24 +23,23 @@ class TelegramSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //automaticallyImplyLeading: false,
         toolbarHeight: 98,
         backgroundColor: const Color(0xfffa8c8c),
-        titleTextStyle: const TextStyle(
-          color: Colors.black38,
-          fontSize: 17,
-        ),
+        titleTextStyle: const TextStyle(color: Colors.black38, fontSize: 17),
         flexibleSpace: Container(
-          //height: 98,
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                // height: 45,
                 alignment: Alignment.center,
-                child: Text("Settings", style: appSettingsBarTextStyle),
+                child: const Text("Settings",
+                    style: TextStyle(
+                      fontStyle: FontStyle.italic,
+                      fontSize: 17,
+                      color: Colors.black38,
+                    )),
               ),
               const SizedBox(height: 15),
               Container(
@@ -64,17 +54,15 @@ class TelegramSettings extends StatelessWidget {
                     Expanded(
                       child: Container(
                         alignment: Alignment.centerLeft,
-                        child: TextField(
+                        child: const TextField(
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            prefixIcon: const Icon(Icons.search),
-                            // label: const Center(child: Text("Search")),
-                            // labelStyle: myTextStyle,
+                            prefixIcon: Icon(Icons.search),
                             hintText: "Search",
-                            hintStyle: appBarTextStyle,
+                            hintStyle:
+                                TextStyle(fontSize: 17, color: Colors.black38),
                           ),
-                          textAlign: TextAlign.left,
-                          style: appBarTextStyle,
+                          style: TextStyle(fontSize: 17, color: Colors.black38),
                         ),
                       ),
                     ),
@@ -103,10 +91,7 @@ class TelegramSettings extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      radius: 33,
-                      backgroundImage: profileImage,
-                    ),
+                    CircleAvatar(radius: 33, backgroundImage: profileImage),
                     Container(
                       margin: const EdgeInsets.only(left: 13, right: 13),
                       child: Column(
@@ -133,113 +118,36 @@ class TelegramSettings extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: BorderDirectional(
-                  bottom: borderColorSet,
-                  top: borderColorSet,
-                ),
+                    bottom: borderColorSet, top: borderColorSet),
               ),
               padding: const EdgeInsets.only(left: 15),
               child: Column(
                 children: [
                   InkWell(
+                    child: RowsWidget(
+                      rowText: Text("Saved Massages", style: rowsTextStyle),
+                      setBorder: true,
+                      setIcons: Icons.bookmark,
+                      iconColor: Colors.blue,
+                    ),
                     onTap: () {},
-                    child: Row(children: [
-                      Container(
-                        height: 29,
-                        width: 29,
-                        decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(6)),
-                        child: const Icon(Icons.bookmark, color: Colors.white),
-                      ),
-                      Expanded(
-                        child: Container(
-                          height: 43,
-                          margin: const EdgeInsets.only(left: 15),
-                          decoration: BoxDecoration(
-                            border: BorderDirectional(
-                              bottom: borderColorSet,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 15),
-                            child: Row(
-                              children: [
-                                Text("Saved Massages", style: rowsTextStyle),
-                                const Spacer(),
-                                const Icon(Icons.chevron_right,
-                                    color: Colors.black38),
-                              ],
-                            ),
-                          ),
-                        ),
-                      )
-                    ]),
                   ),
                   InkWell(
+                    child: RowsWidget(
+                      rowText: Text("Recent Calls", style: rowsTextStyle),
+                      setBorder: true,
+                      setIcons: Icons.call,
+                      iconColor: Colors.green,
+                    ),
                     onTap: () {},
-                    child: Row(children: [
-                      Container(
-                        height: 29,
-                        width: 29,
-                        decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.circular(6)),
-                        child: const Icon(Icons.call, color: Colors.white),
-                      ),
-                      Expanded(
-                        child: Container(
-                          height: 43,
-                          margin: const EdgeInsets.only(left: 15),
-                          decoration: BoxDecoration(
-                            border: BorderDirectional(
-                              bottom: borderColorSet,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 15),
-                            child: Row(
-                              children: [
-                                Text("Recent Calls", style: rowsTextStyle),
-                                const Spacer(),
-                                const Icon(Icons.chevron_right,
-                                    color: Colors.black38),
-                              ],
-                            ),
-                          ),
-                        ),
-                      )
-                    ]),
                   ),
                   InkWell(
+                    child: RowsWidget(
+                      rowText: Text("Devices", style: rowsTextStyle),
+                      setIcons: Icons.devices_outlined,
+                      iconColor: Colors.orange,
+                    ),
                     onTap: () {},
-                    child: Row(children: [
-                      Container(
-                        height: 29,
-                        width: 29,
-                        decoration: BoxDecoration(
-                            color: Colors.orange,
-                            borderRadius: BorderRadius.circular(6)),
-                        child: const Icon(Icons.devices_outlined,
-                            color: Colors.white),
-                      ),
-                      Expanded(
-                        child: Container(
-                          height: 44,
-                          margin: const EdgeInsets.only(left: 15),
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 15),
-                            child: Row(
-                              children: [
-                                Text("Devices", style: rowsTextStyle),
-                                const Spacer(),
-                                const Icon(Icons.chevron_right,
-                                    color: Colors.black38),
-                              ],
-                            ),
-                          ),
-                        ),
-                      )
-                    ]),
                   ),
                 ],
               ),
@@ -248,5 +156,54 @@ class TelegramSettings extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class RowsWidget extends StatelessWidget {
+  const RowsWidget({
+    Key? key,
+    bool? setBorder,
+    required this.rowText,
+    required this.setIcons,
+    required this.iconColor,
+  })  : _serBorder = setBorder ?? false,
+        super(key: key);
+
+  final bool _serBorder;
+  final Text rowText;
+  final IconData setIcons;
+  final Color iconColor;
+
+  final BorderSide borderColorSet = const BorderSide(color: Color(0xffd3d3d9));
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      Container(
+          height: 29,
+          width: 29,
+          decoration: BoxDecoration(
+              color: iconColor, borderRadius: BorderRadius.circular(6)),
+          child: Icon(setIcons, color: Colors.white)),
+      Expanded(
+        child: Container(
+          height: _serBorder ? 43 : 44,
+          margin: const EdgeInsets.only(left: 15),
+          decoration: _serBorder
+              ? BoxDecoration(border: BorderDirectional(bottom: borderColorSet))
+              : null,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Row(
+              children: [
+                rowText,
+                const Spacer(),
+                const Icon(Icons.chevron_right, color: Colors.black38),
+              ],
+            ),
+          ),
+        ),
+      )
+    ]);
   }
 }
