@@ -1,0 +1,252 @@
+import 'package:flutter/material.dart';
+
+class TelegramSettings extends StatelessWidget {
+  const TelegramSettings({Key? key}) : super(key: key);
+
+  final String name = "Harold";
+  final String phoneNumber = "+7 938 200 3901";
+  final String insta = "@hide_the_pain_harold";
+  final NetworkImage profileImage = const NetworkImage(
+      "https://cdn.shazoo.ru/369683_NN2wYimi0M_9554_hide_pain_harold_title_red.jpg");
+
+  final TextStyle appSettingsBarTextStyle = const TextStyle(
+    fontStyle: FontStyle.italic,
+    fontSize: 17,
+    color: Colors.black38,
+  );
+  final TextStyle appBarTextStyle = const TextStyle(
+    fontSize: 17,
+    color: Colors.black38,
+  );
+  final TextStyle fileInfoTextStyle = const TextStyle(
+    fontSize: 15,
+    color: Colors.black38,
+  );
+  final TextStyle rowsTextStyle = const TextStyle(
+    fontSize: 17,
+    color: Colors.black,
+  );
+  final BorderSide borderColorSet = const BorderSide(color: Color(0xffd3d3d9));
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        //automaticallyImplyLeading: false,
+        toolbarHeight: 98,
+        backgroundColor: const Color(0xfffa8c8c),
+        titleTextStyle: const TextStyle(
+          color: Colors.black38,
+          fontSize: 17,
+        ),
+        flexibleSpace: Container(
+          //height: 98,
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // height: 45,
+                alignment: Alignment.center,
+                child: Text("Settings", style: appSettingsBarTextStyle),
+              ),
+              const SizedBox(height: 15),
+              Container(
+                height: 36,
+                alignment: Alignment.bottomCenter,
+                decoration: BoxDecoration(
+                    color: const Color(0xfff18383),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  children: [
+                    Spacer(),
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.centerLeft,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            prefixIcon: const Icon(Icons.search),
+                            // label: const Center(child: Text("Search")),
+                            // labelStyle: myTextStyle,
+                            hintText: "Search",
+                            hintStyle: appBarTextStyle,
+                          ),
+                          textAlign: TextAlign.left,
+                          style: appBarTextStyle,
+                        ),
+                      ),
+                    ),
+                    Spacer()
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: Container(
+        color: const Color(0xffededf3),
+        child: Column(
+          children: [
+            InkWell(
+              onTap: () {},
+              child: Container(
+                alignment: Alignment.center,
+                height: 92,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: BorderDirectional(bottom: borderColorSet)),
+                padding: const EdgeInsets.only(
+                    left: 15, right: 15, top: 13, bottom: 13),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 33,
+                      backgroundImage: profileImage,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 13, right: 13),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(name,
+                              style: const TextStyle(
+                                  fontSize: 19, fontWeight: FontWeight.bold)),
+                          Text(phoneNumber, style: fileInfoTextStyle),
+                          Text(insta, style: fileInfoTextStyle),
+                        ],
+                      ),
+                    ),
+                    const Spacer(),
+                    const Icon(Icons.chevron_right, color: Colors.black38)
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 34),
+            Container(
+              height: 132,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: BorderDirectional(
+                  bottom: borderColorSet,
+                  top: borderColorSet,
+                ),
+              ),
+              padding: const EdgeInsets.only(left: 15),
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: Row(children: [
+                      Container(
+                        height: 29,
+                        width: 29,
+                        decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(6)),
+                        child: const Icon(Icons.bookmark, color: Colors.white),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 43,
+                          margin: const EdgeInsets.only(left: 15),
+                          decoration: BoxDecoration(
+                            border: BorderDirectional(
+                              bottom: borderColorSet,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 15),
+                            child: Row(
+                              children: [
+                                Text("Saved Massages", style: rowsTextStyle),
+                                const Spacer(),
+                                const Icon(Icons.chevron_right,
+                                    color: Colors.black38),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ]),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Row(children: [
+                      Container(
+                        height: 29,
+                        width: 29,
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(6)),
+                        child: const Icon(Icons.call, color: Colors.white),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 43,
+                          margin: const EdgeInsets.only(left: 15),
+                          decoration: BoxDecoration(
+                            border: BorderDirectional(
+                              bottom: borderColorSet,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 15),
+                            child: Row(
+                              children: [
+                                Text("Recent Calls", style: rowsTextStyle),
+                                const Spacer(),
+                                const Icon(Icons.chevron_right,
+                                    color: Colors.black38),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ]),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Row(children: [
+                      Container(
+                        height: 29,
+                        width: 29,
+                        decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(6)),
+                        child: const Icon(Icons.devices_outlined,
+                            color: Colors.white),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 44,
+                          margin: const EdgeInsets.only(left: 15),
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 15),
+                            child: Row(
+                              children: [
+                                Text("Devices", style: rowsTextStyle),
+                                const Spacer(),
+                                const Icon(Icons.chevron_right,
+                                    color: Colors.black38),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ]),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
