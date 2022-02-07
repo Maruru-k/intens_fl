@@ -47,7 +47,6 @@ class TelegramSettings extends StatelessWidget {
                   InkWell(
                     onTap: () {},
                     child: const SizedBox(
-                      width: 29,
                       child: Text("Edit",
                           style: TextStyle(
                               fontSize: 17, color: Color(0xFF037EE5))),
@@ -64,7 +63,7 @@ class TelegramSettings extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     Expanded(
                       child: Container(
                         alignment: Alignment.centerLeft,
@@ -80,7 +79,7 @@ class TelegramSettings extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Spacer()
+                    const Spacer()
                   ],
                 ),
               ),
@@ -116,7 +115,7 @@ class TelegramSettings extends StatelessWidget {
                               style: const TextStyle(
                                   fontSize: 19, fontWeight: FontWeight.bold)),
                           Text(phoneNumber, style: fileInfoTextStyle),
-                          Text(insta, style: fileInfoTextStyle),
+                          Expanded(child: Text(insta, style: fileInfoTextStyle)),
                         ],
                       ),
                     ),
