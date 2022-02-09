@@ -13,10 +13,6 @@ class TelegramSettings extends StatelessWidget {
     fontSize: 15,
     color: Colors.black38,
   );
-  final TextStyle rowsTextStyle = const TextStyle(
-    fontSize: 17,
-    color: Colors.black,
-  );
   final BorderSide borderColorSet = const BorderSide(color: Color(0xffd3d3d9));
 
   @override
@@ -126,45 +122,7 @@ class TelegramSettings extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 34),
-            Container(
-              height: 132,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: BorderDirectional(
-                    bottom: borderColorSet, top: borderColorSet),
-              ),
-              padding: const EdgeInsets.only(left: 15),
-              child: Column(
-                children: [
-                  InkWell(
-                    child: RowsWidget(
-                      rowText: Text("Saved Massages", style: rowsTextStyle),
-                      setBorder: true,
-                      setIcons: Icons.bookmark,
-                      iconColor: Colors.blue,
-                    ),
-                    onTap: () {},
-                  ),
-                  InkWell(
-                    child: RowsWidget(
-                      rowText: Text("Recent Calls", style: rowsTextStyle),
-                      setBorder: true,
-                      setIcons: Icons.call,
-                      iconColor: Colors.green,
-                    ),
-                    onTap: () {},
-                  ),
-                  InkWell(
-                    child: RowsWidget(
-                      rowText: Text("Devices", style: rowsTextStyle),
-                      setIcons: Icons.devices_outlined,
-                      iconColor: Colors.orange,
-                    ),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
+            RowsColumnWidget(borderColorSet: borderColorSet),
           ],
         ),
       ),
@@ -172,21 +130,70 @@ class TelegramSettings extends StatelessWidget {
   }
 }
 
-class RowsWidget extends StatelessWidget {
-  const RowsWidget({
-    Key? key,
-    bool? setBorder,
-    required this.rowText,
-    required this.setIcons,
-    required this.iconColor,
-  })  : _serBorder = setBorder ?? false,
-        super(key: key);
-
-  final bool _serBorder;
-  final Text rowText;
-  final IconData setIcons;
+class RowData {
+  final IconData icon;
   final Color iconColor;
+  final String text;
+  bool setBorder;
 
+  RowData({
+    required this.icon,
+    required this.iconColor,
+    required this.text,
+    this.setBorder = false,
+  });
+}
+
+class RowsColumnWidget extends StatelessWidget {
+  RowsColumnWidget({Key? key, required this.borderColorSet}) : super(key: key);
+
+  final BorderSide borderColorSet;
+  final TextStyle rowsTextStyle =
+      const TextStyle(fontSize: 17, color: Colors.black);
+
+  final List<RowData> rowData = [
+    RowData(
+      icon: Icons.bookmark,
+      iconColor: Colors.blue,
+      text: "Saved Massages",
+      setBorder: true,
+    ),
+    RowData(
+      icon: Icons.call,
+      iconColor: Colors.green,
+      text: "Recent Calls",
+      setBorder: true,
+    ),
+    RowData(
+      icon: Icons.devices_outlined,
+      iconColor: Colors.orange,
+      text: "Devices",
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 132,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: BorderDirectional(bottom: borderColorSet, top: borderColorSet),
+      ),
+      padding: const EdgeInsets.only(left: 15),
+      child: Column(
+        children:
+            rowData.map((RowData data) => _RowsWidget(rowData: data)).toList(),
+      ),
+    );
+  }
+}
+
+class _RowsWidget extends StatelessWidget {
+  const _RowsWidget({Key? key, required this.rowData}) : super(key: key);
+
+  final RowData rowData;
+  final TextStyle rowsTextStyle =
+      const TextStyle(fontSize: 17, color: Colors.black);
   final BorderSide borderColorSet = const BorderSide(color: Color(0xffd3d3d9));
 
   @override
@@ -196,20 +203,20 @@ class RowsWidget extends StatelessWidget {
           height: 29,
           width: 29,
           decoration: BoxDecoration(
-              color: iconColor, borderRadius: BorderRadius.circular(6)),
-          child: Icon(setIcons, color: Colors.white)),
+              color: rowData.iconColor, borderRadius: BorderRadius.circular(6)),
+          child: Icon(rowData.icon, color: Colors.white)),
       Expanded(
         child: Container(
-          height: _serBorder ? 43 : 44,
+          height: rowData.setBorder ? 43 : 44,
           margin: const EdgeInsets.only(left: 15),
-          decoration: _serBorder
+          decoration: rowData.setBorder
               ? BoxDecoration(border: BorderDirectional(bottom: borderColorSet))
               : null,
           child: Padding(
             padding: const EdgeInsets.only(right: 15),
             child: Row(
               children: [
-                rowText,
+                Text(rowData.text, style: rowsTextStyle),
                 const Spacer(),
                 const Icon(Icons.chevron_right, color: Colors.black38),
               ],
