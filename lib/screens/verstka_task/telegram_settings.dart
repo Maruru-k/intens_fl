@@ -7,7 +7,7 @@ class TelegramSettings extends StatelessWidget {
   final String phoneNumber = "+7 938 200 3901";
   final String insta = "@hide_the_pain_harold";
   final NetworkImage profileImage = const NetworkImage(
-      "https://cdn.shazoo.ru/369683_NN2wYimi0M_9554_hide_pain_harold_title_red.jpg");
+      "https://avatars.githubusercontent.com/u/97803700?v=4");
 
   final TextStyle fileInfoTextStyle = const TextStyle(
     fontSize: 15,
