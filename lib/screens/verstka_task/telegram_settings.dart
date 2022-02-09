@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intens_fl/screens/verstka_task/widgets/app_bar_title_widget.dart';
+import 'package:intens_fl/screens/verstka_task/widgets/searc_panel_widget.dart';
 
 class TelegramSettings extends StatelessWidget {
   const TelegramSettings({Key? key}) : super(key: key);
@@ -27,58 +29,10 @@ class TelegramSettings extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Stack(
-                alignment: Alignment.centerRight,
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    child: const Text("Settings",
-                        style: TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 17,
-                          color: Colors.black38,
-                        )),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const SizedBox(
-                      child: Text("Edit",
-                          style: TextStyle(
-                              fontSize: 17, color: Color(0xFF037EE5))),
-                    ),
-                  )
-                ],
-              ),
-              const SizedBox(height: 15),
-              Container(
-                height: 36,
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: const Color(0xfff18383),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  children: [
-                    const Spacer(),
-                    Expanded(
-                      child: Container(
-                        alignment: Alignment.centerLeft,
-                        child: const TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            prefixIcon: Icon(Icons.search),
-                            hintText: "Search",
-                            hintStyle:
-                                TextStyle(fontSize: 17, color: Colors.black38),
-                          ),
-                          style: TextStyle(fontSize: 17, color: Colors.black38),
-                        ),
-                      ),
-                    ),
-                    const Spacer()
-                  ],
-                ),
-              ),
+            children: const [
+              AppBarTitlePanelWidget(),
+              SizedBox(height: 15),
+              SearchPanelWidget(),
             ],
           ),
         ),
@@ -111,7 +65,8 @@ class TelegramSettings extends StatelessWidget {
                               style: const TextStyle(
                                   fontSize: 19, fontWeight: FontWeight.bold)),
                           Text(phoneNumber, style: fileInfoTextStyle),
-                          Expanded(child: Text(insta, style: fileInfoTextStyle)),
+                          Expanded(
+                              child: Text(insta, style: fileInfoTextStyle)),
                         ],
                       ),
                     ),
@@ -136,12 +91,11 @@ class RowData {
   final String text;
   bool setBorder;
 
-  RowData({
-    required this.icon,
-    required this.iconColor,
-    required this.text,
-    this.setBorder = false,
-  });
+  RowData(
+      {required this.icon,
+      required this.iconColor,
+      required this.text,
+      this.setBorder = false});
 }
 
 class RowsColumnWidget extends StatelessWidget {
