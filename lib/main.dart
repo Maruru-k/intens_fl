@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(colorScheme: const ColorScheme.dark(primary: Color(0xff1f2d3b))),
       debugShowCheckedModeBanner: false,
       home: TelegramSettings(),
       title: "Hell o",

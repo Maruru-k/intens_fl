@@ -14,7 +14,7 @@ class AppBarTitlePanelWidget extends StatelessWidget {
               style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontSize: 17,
-                color: Colors.black38,
+                color: Colors.white60,
               )),
         ),
         InkWell(
