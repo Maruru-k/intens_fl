@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/verstka_task/widgets/account_column_widget.dart';
-import 'package:intens_fl/screens/verstka_task/widgets/app_bar_title_widget.dart';
-import 'package:intens_fl/screens/verstka_task/widgets/column_row_widget.dart';
-import 'package:intens_fl/screens/verstka_task/widgets/searc_panel_widget.dart';
+import 'package:intens_fl/screens/layout_task/widgets/account_column_widget.dart';
+import 'package:intens_fl/screens/layout_task/widgets/app_bar_title_widget.dart';
+import 'package:intens_fl/screens/layout_task/widgets/column_row_widget.dart';
+import 'package:intens_fl/screens/layout_task/widgets/searc_panel_widget.dart';
 
 class TelegramSettings extends StatelessWidget {
   TelegramSettings({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class TelegramSettings extends StatelessWidget {
       text: "Уведомления и звук",
       setBorder: true,
       onTapFunction: () {
-        print(1);
+        print("Settings: 1");
       },
     ),
     RowData(
@@ -27,7 +27,7 @@ class TelegramSettings extends StatelessWidget {
       text: "Конфиденцияальность",
       setBorder: true,
       onTapFunction: () {
-        print(2);
+        print("Settings: 2");
       },
     ),
     RowData(
@@ -35,7 +35,7 @@ class TelegramSettings extends StatelessWidget {
       text: "Данные и память",
       setBorder: true,
       onTapFunction: () {
-        print(3);
+        print("Settings: 3");
       },
     ),
     RowData(
@@ -43,7 +43,7 @@ class TelegramSettings extends StatelessWidget {
       text: "Настройки чатов",
       setBorder: true,
       onTapFunction: () {
-        print(4);
+        print("Settings: 4");
       },
     ),
     RowData(
@@ -51,7 +51,7 @@ class TelegramSettings extends StatelessWidget {
       text: "Папки",
       setBorder: true,
       onTapFunction: () {
-        print(5);
+        print("Settings: 5");
       },
     ),
     RowData(
@@ -59,14 +59,14 @@ class TelegramSettings extends StatelessWidget {
       text: "Устройства",
       setBorder: true,
       onTapFunction: () {
-        print(6);
+        print("Settings: 6");
       },
     ),
     RowData(
       icon: Icons.language_outlined,
       text: "Язык",
       onTapFunction: () {
-        print(7);
+        print("Settings: 7");
       },
     ),
   ];
@@ -77,7 +77,7 @@ class TelegramSettings extends StatelessWidget {
       text: "Задать вопрос",
       setBorder: true,
       onTapFunction: () {
-        print(1);
+        print("Help: 1");
       },
     ),
     RowData(
@@ -85,7 +85,7 @@ class TelegramSettings extends StatelessWidget {
       text: "Вопросы от Telegram",
       setBorder: true,
       onTapFunction: () {
-        print(2);
+        print("Help: 2");
       },
     ),
     RowData(
@@ -93,7 +93,7 @@ class TelegramSettings extends StatelessWidget {
       text: "Политика Конфединциальности",
       setBorder: true,
       onTapFunction: () {
-        print(3);
+        print("Help: 3");
       },
     ),
   ];
@@ -104,7 +104,7 @@ class TelegramSettings extends StatelessWidget {
       bottomText: "Нажмите, чтобы изменить номер телефона",
       setBorder: true,
       onTapFunction: () {
-        print(1);
+        print("Acc: 1");
       },
     ),
     AccountData(
@@ -112,14 +112,14 @@ class TelegramSettings extends StatelessWidget {
       bottomText: "Имя пользователя",
       setBorder: true,
       onTapFunction: () {
-        print(2);
+        print("Acc: 2");
       },
     ),
     AccountData(
       text: "Человек",
       bottomText: "О себе",
       onTapFunction: () {
-        print(3);
+        print("Acc: 3");
       },
     ),
   ];
@@ -185,7 +185,7 @@ class TelegramSettings extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 3),
           AccountColumnWidget(
             title: "Аккаунт",
             borderColorSet: borderColorSet,

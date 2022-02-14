@@ -18,7 +18,9 @@ class AppBarTitlePanelWidget extends StatelessWidget {
               )),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            print("Edit");
+          },
           child: const SizedBox(
             child: Text("Edit",
                 style: TextStyle(fontSize: 17, color: Color(0xFF037EE5))),

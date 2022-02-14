@@ -70,6 +70,7 @@ class _RowsWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(data.text, style: rowsTextStyle),
+                  const SizedBox(height: 5),
                   Text(data.bottomText, style: bottomTextStyle),
                 ],
               ),

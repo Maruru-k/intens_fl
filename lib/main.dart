@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intens_fl/screens/home.dart';
 import 'package:intens_fl/screens/intens.dart';
 import 'package:intens_fl/screens/intens_2.dart';
-import 'package:intens_fl/screens/verstka_task/telegram_settings.dart';
+import 'package:intens_fl/screens/layout_task/telegram_settings.dart';
 import 'package:intens_fl/widgets/my_align.dart';
 import 'package:intens_fl/widgets/my_padding.dart';
 import 'package:intens_fl/widgets/my_scaffold.dart';
