@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../telegram_settings.dart';
+import 'package:intens_fl/screens/layout_task/rows_data.dart';
 
 class AccountColumnWidget extends StatelessWidget {
   final String? title;
@@ -28,9 +27,8 @@ class AccountColumnWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Text(title!, style: titleTextStyle)),
+          const SizedBox(height: 24),
+          Text(title!, style: titleTextStyle),
           Column(
               children: data
                   .map((AccountData data) => _RowsWidget(data: data))

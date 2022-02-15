@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../telegram_settings.dart';
+import 'package:intens_fl/screens/layout_task/rows_data.dart';
 
 class ColumnRowsWidget extends StatelessWidget {
   final String? title;
@@ -24,12 +23,12 @@ class ColumnRowsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xff1d2732),
-      padding: const EdgeInsets.only(left: 15),
+      padding: const EdgeInsets.only(left: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.only(top: 24, bottom: 16),
               child: Text(title!, style: titleTextStyle)),
           Column(
               children: rowData
@@ -45,7 +44,8 @@ class _RowsWidget extends StatelessWidget {
   final RowData rowData;
   final TextStyle rowsTextStyle =
       const TextStyle(fontSize: 20, color: Colors.white);
-  final BorderSide borderColorSet = const BorderSide(color: Colors.black);
+  final BorderSide borderSet =
+      const BorderSide(color: Colors.black, width: 0.8);
 
   const _RowsWidget({Key? key, required this.rowData}) : super(key: key);
 
@@ -57,23 +57,21 @@ class _RowsWidget extends StatelessWidget {
         Icon(
           rowData.icon,
           color: rowData.iconColor,
-          size: 35,
+          size: 38,
         ),
         Expanded(
           child: Container(
             //height: rowData.setBorder ? 43 : 44,
-            padding: const EdgeInsets.only(left: 15, top: 15, bottom: 15),
+            margin: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(top: 18, bottom: 18),
             decoration: rowData.setBorder
-                ? BoxDecoration(
-                    border: BorderDirectional(bottom: borderColorSet))
+                ? BoxDecoration(border: BorderDirectional(bottom: borderSet))
                 : null,
             child: Padding(
-              padding: const EdgeInsets.only(right: 15),
+              padding: const EdgeInsets.only(right: 10),
               child: Row(
                 children: [
                   Text(rowData.text, style: rowsTextStyle),
-                  const Spacer(),
-                  Icon(Icons.chevron_right, color: rowData.iconColor),
                 ],
               ),
             ),
