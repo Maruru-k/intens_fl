@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/telegram_settings.dart';
+import 'package:intens_fl/screens/layout_task/telegram_settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
