@@ -7,9 +7,9 @@ class ColumnRowsWidget extends StatelessWidget {
   final BorderSide borderColorSet;
 
   final TextStyle rowsTextStyle =
-      const TextStyle(fontSize: 19, color: Colors.black);
+      const TextStyle(fontSize: 14, color: Colors.black);
   final TextStyle titleTextStyle =
-      const TextStyle(fontSize: 19, color: Color(0xff87c1ef));
+      const TextStyle(fontSize: 13, color: Color(0xff87c1ef));
 
   const ColumnRowsWidget({
     Key? key,
@@ -28,7 +28,7 @@ class ColumnRowsWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-              padding: const EdgeInsets.only(top: 24, bottom: 16),
+              padding: const EdgeInsets.only(top: 18, bottom: 8),
               child: Text(title!, style: titleTextStyle)),
           Column(
               children: rowData
@@ -43,9 +43,9 @@ class ColumnRowsWidget extends StatelessWidget {
 class _RowsWidget extends StatelessWidget {
   final RowData rowData;
   final TextStyle rowsTextStyle =
-      const TextStyle(fontSize: 20, color: Colors.white);
+      const TextStyle(fontSize: 14, color: Colors.white);
   final BorderSide borderSet =
-      const BorderSide(color: Colors.black, width: 0.8);
+      const BorderSide(color: Colors.black, width: 0.6);
 
   const _RowsWidget({Key? key, required this.rowData}) : super(key: key);
 
@@ -57,13 +57,13 @@ class _RowsWidget extends StatelessWidget {
         Icon(
           rowData.icon,
           color: rowData.iconColor,
-          size: 38,
+          size: 28,
         ),
         Expanded(
           child: Container(
             //height: rowData.setBorder ? 43 : 44,
             margin: const EdgeInsets.only(left: 20),
-            padding: const EdgeInsets.only(top: 18, bottom: 18),
+            padding: const EdgeInsets.only(top: 14, bottom: 14),
             decoration: rowData.setBorder
                 ? BoxDecoration(border: BorderDirectional(bottom: borderSet))
                 : null,

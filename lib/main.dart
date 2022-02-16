@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(colorScheme: const ColorScheme.dark(primary: Color(0xff1f2d3b))),
       debugShowCheckedModeBanner: false,
-      home: TelegramSettings(),
+      home: const TelegramSettings(),
       title: "Hell o",
     );
   }

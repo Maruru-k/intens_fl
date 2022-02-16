@@ -87,7 +87,7 @@ final List<RowData> helpRowData = [
 
 final List<AccountData> accountRowData = [
   AccountData(
-    text: "+7 938 200 3901",
+    text: "+7 (938) 200-39-01",
     bottomText: "Нажмите, чтобы изменить номер телефона",
     setBorder: true,
     onTapFunction: () {
