@@ -120,10 +120,10 @@ class RowData {
 
   RowData(
       {Color? iconColor,
-        required this.icon,
-        required this.text,
-        required this.onTapFunction,
-        this.setBorder = false})
+      required this.icon,
+      required this.text,
+      required this.onTapFunction,
+      this.setBorder = false})
       : iconColor = iconColor ?? Colors.white24;
 }
 
@@ -135,7 +135,7 @@ class AccountData {
 
   AccountData(
       {required this.text,
-        required this.bottomText,
-        required this.onTapFunction,
-        this.setBorder = false});
+      required this.bottomText,
+      required this.onTapFunction,
+      this.setBorder = false});
 }

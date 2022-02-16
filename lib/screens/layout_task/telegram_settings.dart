@@ -3,6 +3,7 @@ import 'package:intens_fl/screens/layout_task/rows_data.dart';
 import 'package:intens_fl/screens/layout_task/widgets/account_column_widget.dart';
 import 'package:intens_fl/screens/layout_task/widgets/app_bar_widget.dart';
 import 'package:intens_fl/screens/layout_task/widgets/column_row_widget.dart';
+import 'package:intens_fl/screens/layout_task/widgets/qr_widget.dart';
 import 'package:intens_fl/screens/layout_task/widgets/searc_panel_widget.dart';
 
 class TelegramSettings extends StatelessWidget {
@@ -41,7 +42,9 @@ class TelegramSettings extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: IconButton(
               icon: const Icon(Icons.arrow_back_outlined),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               iconSize: 24,
             )),
         actions: [
@@ -49,7 +52,18 @@ class TelegramSettings extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 8),
             alignment: Alignment.topRight,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute<void>(
+                  builder: (BuildContext context) {
+                    return Container(
+                      color: Colors.white,
+                      height: double.infinity,
+                      width: double.infinity,
+                      child: Image.asset("assets/images/qr_code.png"),
+                    );
+                  },
+                ));
+              },
               icon: const Icon(Icons.qr_code_outlined),
               iconSize: 24,
             ),
@@ -61,7 +75,6 @@ class TelegramSettings extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(Icons.search_outlined),
               iconSize: 24,
-
             ),
           ),
           Container(
