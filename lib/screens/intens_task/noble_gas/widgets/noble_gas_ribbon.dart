@@ -23,27 +23,16 @@ class NobleGasRibbon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    nobleGasList.removeAt(0);
+
     return Container(
-        color: Theme.of(context).colorScheme.primary,
-        padding: const EdgeInsets.symmetric(vertical: 18),
-        child: Column(
-          children: [
-            MyNobleGasRow(nobleGas: nobleGasList[0]),
-            const Divider(color: Colors.white60),
-            MyNobleGasRow(nobleGas: nobleGasList[1]),
-            const Divider(color: Colors.white60),
-            MyNobleGasRow(nobleGas: nobleGasList[2]),
-            const Divider(color: Colors.white60),
-            MyNobleGasRow(nobleGas: nobleGasList[3]),
-            const Divider(color: Colors.white60),
-            MyNobleGasRow(nobleGas: nobleGasList[4]),
-            const Divider(color: Colors.white60),
-            MyNobleGasRow(nobleGas: nobleGasList[5]),
-            const Divider(color: Colors.white60),
-            MyNobleGasRow(nobleGas: nobleGasList[6]),
-            const Divider(color: Colors.white60),
-            MyNobleGasRow(nobleGas: nobleGasList[7]),
-          ],
-        ));
+      color: Theme.of(context).colorScheme.primary,
+      padding: const EdgeInsets.symmetric(vertical: 18),
+      child: Column(
+        children: nobleGasList
+            .map((element) => MyNobleGasRow(nobleGas: element))
+            .toList(),
+      ),
+    );
   }
 }

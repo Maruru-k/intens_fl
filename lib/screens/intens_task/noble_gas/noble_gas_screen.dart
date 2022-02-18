@@ -9,19 +9,14 @@ class NobleGasScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xff141e28),
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(Icons.arrow_back),
+        ),
         backgroundColor: const Color(0xff061a86),
-        centerTitle: true,
-        title: const Text("Список Благородных Газов"),
+        title: const Text("Благородные газы"),
       ),
-      body: Column(
-        children: [
-          Container(
-              padding: const EdgeInsets.symmetric(vertical: 35),
-              child: const Text("Благородные газы",
-                  style: TextStyle(fontSize: 36))),
-          NobleGasRibbon(),
-        ],
-      ),
+      body: NobleGasRibbon(),
     );
   }
 }

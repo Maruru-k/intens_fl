@@ -3,7 +3,6 @@ import 'package:intens_fl/screens/intens_task/noble_gas/widgets/noble_gas_model.
 
 class MyNobleGasRow extends StatelessWidget {
   final NobleGasModel _nobleGas;
-  final TextStyle gasRowStyle = const TextStyle(fontSize: 20);
 
   const MyNobleGasRow({Key? key, required NobleGasModel nobleGas})
       : _nobleGas = nobleGas,
@@ -12,36 +11,44 @@ class MyNobleGasRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      padding: const EdgeInsets.only(left: 10),
+      child: Column(
         children: [
-          Container(
-            width: 62,
-            alignment: Alignment.center,
-            child: Text(
-              _nobleGas.atomicNumber,
-              style: gasRowStyle,
-              overflow: TextOverflow.ellipsis,
-            ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 70,
+                alignment: Alignment.center,
+                child: Text(
+                  _nobleGas.atomicNumber,
+                  style: const TextStyle(fontSize: 26),
+                ),
+              ),
+              Container(
+                width: 62,
+                alignment: Alignment.center,
+                child: Text(_nobleGas.symbol,
+                    style: const TextStyle(fontSize: 35)),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(_nobleGas.name, style: const TextStyle(fontSize: 14)),
+                    Text(
+                      _nobleGas.atomicWeight,
+                      style:
+                          const TextStyle(fontSize: 12, color: Colors.white30),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          Container(
-            width: 72,
-            alignment: Alignment.center,
-            child: Text(_nobleGas.symbol, style: gasRowStyle),
-          ),
-          Container(
-            width: 110,
-            alignment: Alignment.center,
-            child: Text(_nobleGas.name, style: gasRowStyle),
-          ),
-          Expanded(
-            child: Container(
-              alignment: Alignment.center,
-              child: Text(_nobleGas.atomicWeight, style: gasRowStyle),
-            ),
-          ),
+          const Divider(color: Colors.white60),
         ],
       ),
     );
