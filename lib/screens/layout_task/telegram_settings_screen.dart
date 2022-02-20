@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/rows_data.dart';
+import 'package:intens_fl/screens/layout_task/project_data/rows_data.dart';
 import 'package:intens_fl/screens/layout_task/widgets/account_column_widget.dart';
 import 'package:intens_fl/screens/layout_task/widgets/app_bar_widget.dart';
 import 'package:intens_fl/screens/layout_task/widgets/column_row_widget.dart';
-import 'package:intens_fl/screens/layout_task/qr_screen.dart';
 import 'package:intens_fl/screens/layout_task/widgets/searc_panel_widget.dart';
-import 'package:intens_fl/screens/layout_task/widgets/tool_bar_widget.dart';
 
 class TelegramSettings extends StatelessWidget {
   const TelegramSettings({Key? key}) : super(key: key);
@@ -22,44 +20,7 @@ class TelegramSettings extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xff141e28),
       drawer: Container(color: const Color(0x99009688)),
-      appBar: AppBar(
-        toolbarHeight: 144,
-        automaticallyImplyLeading: true,
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        titleTextStyle: const TextStyle(color: Colors.black38, fontSize: 17),
-        flexibleSpace: AppBarPanelWidget(
-          profileImage: profileImage,
-          fullName: fullName,
-        ),
-        leading: Container(
-            margin: const EdgeInsets.all(8),
-            alignment: Alignment.topLeft,
-            child: IconButton(
-              icon: const Icon(Icons.arrow_back_outlined),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              iconSize: 24,
-            )),
-        actions: [
-          ToolBarWidget(
-              icon: Icons.qr_code_outlined,
-              onPressedFunction: () {
-                Navigator.push(context,
-                    MaterialPageRoute<void>(builder: (BuildContext context) {
-                  return const QrCodeScreenWidget();
-                }));
-              }),
-          ToolBarWidget(
-            icon: Icons.search_outlined,
-            onPressedFunction: () {},
-          ),
-          ToolBarWidget(
-            icon: Icons.more_vert,
-            onPressedFunction: () {},
-          )
-        ],
-      ),
+      appBar: AppBarPanelWidget(profileImage: profileImage, fullName: fullName),
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       floatingActionButton: SizedBox(
         height: 58,

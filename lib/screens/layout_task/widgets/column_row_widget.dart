@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/rows_data.dart';
+import 'package:intens_fl/screens/layout_task/project_data/rows_data.dart';
 
 class ColumnRowsWidget extends StatelessWidget {
   final String? title;
@@ -8,8 +8,8 @@ class ColumnRowsWidget extends StatelessWidget {
 
   final TextStyle rowsTextStyle =
       const TextStyle(fontSize: 14, color: Colors.black);
-  final TextStyle titleTextStyle =
-      const TextStyle(fontSize: 13, color: Color(0xff87c1ef));
+  final TextStyle titleTextStyle = const TextStyle(
+      fontSize: 14, color: Color(0xff87c1ef), fontWeight: FontWeight.w500);
 
   const ColumnRowsWidget({
     Key? key,
@@ -28,7 +28,7 @@ class ColumnRowsWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-              padding: const EdgeInsets.only(top: 18, bottom: 8),
+              padding: const EdgeInsets.only(top: 14),
               child: Text(title!, style: titleTextStyle)),
           Column(
               children: rowData
@@ -61,19 +61,15 @@ class _RowsWidget extends StatelessWidget {
         ),
         Expanded(
           child: Container(
-            //height: rowData.setBorder ? 43 : 44,
             margin: const EdgeInsets.only(left: 20),
             padding: const EdgeInsets.only(top: 14, bottom: 14),
             decoration: rowData.setBorder
                 ? BoxDecoration(border: BorderDirectional(bottom: borderSet))
                 : null,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Row(
-                children: [
-                  Text(rowData.text, style: rowsTextStyle),
-                ],
-              ),
+            child: Row(
+              children: [
+                Text(rowData.text, style: rowsTextStyle),
+              ],
             ),
           ),
         )

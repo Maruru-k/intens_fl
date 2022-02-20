@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/rows_data.dart';
+import 'package:intens_fl/screens/layout_task/project_data/rows_data.dart';
 
 class AccountColumnWidget extends StatelessWidget {
   final String? title;
@@ -8,8 +8,8 @@ class AccountColumnWidget extends StatelessWidget {
 
   final TextStyle rowsTextStyle =
       const TextStyle(fontSize: 14, color: Colors.black);
-  final TextStyle titleTextStyle =
-      const TextStyle(fontSize: 13, color: Color(0xff87c1ef));
+  final TextStyle titleTextStyle = const TextStyle(
+      fontSize: 14, color: Color(0xff87c1ef), fontWeight: FontWeight.w500);
 
   const AccountColumnWidget({
     Key? key,
@@ -27,8 +27,9 @@ class AccountColumnWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 22),
-          Text(title!, style: titleTextStyle),
+          Container(
+              padding: const EdgeInsets.only(top: 14),
+              child: Text(title!, style: titleTextStyle)),
           Column(
               children: data
                   .map((AccountData data) => _RowsWidget(data: data))
@@ -45,7 +46,7 @@ class _RowsWidget extends StatelessWidget {
       const TextStyle(fontSize: 14, color: Colors.white);
   final TextStyle bottomTextStyle =
       const TextStyle(fontSize: 12, color: Colors.grey);
-  final BorderSide borderColorSet =
+  final BorderSide borderSet =
       const BorderSide(color: Colors.black, width: 0.6);
 
   const _RowsWidget({Key? key, required this.data}) : super(key: key);
@@ -57,22 +58,17 @@ class _RowsWidget extends StatelessWidget {
       child: Row(children: [
         Expanded(
           child: Container(
-            //height: rowData.setBorder ? 43 : 44,
-            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            padding: const EdgeInsets.only(top: 14, bottom: 14),
             decoration: data.setBorder
-                ? BoxDecoration(
-                    border: BorderDirectional(bottom: borderColorSet))
+                ? BoxDecoration(border: BorderDirectional(bottom: borderSet))
                 : null,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(data.text, style: rowsTextStyle),
-                  const SizedBox(height: 5),
-                  Text(data.bottomText, style: bottomTextStyle),
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(data.text, style: rowsTextStyle),
+                const SizedBox(height: 5),
+                Text(data.bottomText, style: bottomTextStyle),
+              ],
             ),
           ),
         )
