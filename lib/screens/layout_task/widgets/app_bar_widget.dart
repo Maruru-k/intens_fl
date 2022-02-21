@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intens_fl/screens/layout_task/project_data/navigation_data.dart';
 import 'package:intens_fl/screens/layout_task/widgets/tool_bar_widget.dart';
 
 class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
@@ -66,7 +67,7 @@ class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
         ToolBarWidget(
             icon: Icons.qr_code_outlined,
             onPressedFunction: () {
-              Navigator.of(context).pushNamed("/qr_screen");
+              Navigator.of(context).pushNamed(NavigationKeys.qrCode);
             }),
         ToolBarWidget(
           icon: Icons.search_outlined,

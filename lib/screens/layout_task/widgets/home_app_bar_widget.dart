@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intens_fl/screens/layout_task/project_data/navigation_data.dart';
 import 'package:intens_fl/screens/layout_task/widgets/tool_bar_widget.dart';
 
 class HomeAppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
@@ -52,17 +53,20 @@ class HomeAppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
       ),
       actions: [
         ToolBarWidget(
+            width: 40,
             align: Alignment.centerRight,
             icon: Icons.settings_outlined,
             onPressedFunction: () {
-              Navigator.of(context).pushNamed("/telegram_settings");
+              Navigator.of(context).pushNamed(NavigationKeys.telegramSettings);
             }),
         ToolBarWidget(
+          width: 40,
           align: Alignment.centerRight,
           icon: Icons.search_outlined,
           onPressedFunction: () {},
         ),
         ToolBarWidget(
+          width: 40,
           align: Alignment.centerRight,
           icon: Icons.more_vert,
           onPressedFunction: () {},

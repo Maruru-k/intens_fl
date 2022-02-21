@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intens_fl/screens/intens_task/noble_gas/noble_gas_screen.dart';
+import 'package:intens_fl/screens/intens_task/olimpics/olympics22.dart';
 import 'package:intens_fl/screens/layout_task/home_screen.dart';
 import 'package:intens_fl/screens/layout_task/project_data/navigation_data.dart';
 import 'package:intens_fl/screens/layout_task/qr_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           colorScheme: const ColorScheme.dark(primary: Color(0xff1f2d3b))),
       debugShowCheckedModeBanner: false,
       title: "Hell o",
-      routes: navigationData,
+      routes: NavigationData().navigationData,
     );
   }
 }
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
 //     return MaterialApp(
 //       theme: ThemeData(colorScheme: const ColorScheme.dark(primary: Color(0xff1f2d3b))),
 //       debugShowCheckedModeBanner: false,
-//       home: const NobleGasScreen(),
+//       home: MedalStandings(),
 //       title: "Hell o",
 //     );
 //   }
