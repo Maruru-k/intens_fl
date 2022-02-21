@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/telegram_settings_screen.dart';
 import 'package:intens_fl/screens/layout_task/widgets/tool_bar_widget.dart';
 
 class HomeAppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
@@ -56,11 +55,7 @@ class HomeAppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
             align: Alignment.centerRight,
             icon: Icons.settings_outlined,
             onPressedFunction: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => const TelegramSettings(),
-                  ));
+              Navigator.of(context).pushNamed("/telegram_settings");
             }),
         ToolBarWidget(
           align: Alignment.centerRight,

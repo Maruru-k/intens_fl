@@ -9,11 +9,6 @@ class QrCodeScreenWidget extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         automaticallyImplyLeading: true,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(Icons.arrow_back_outlined)),
       ),
       body: Container(
         color: Colors.white,

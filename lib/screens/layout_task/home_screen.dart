@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/telegram_settings_screen.dart';
 import 'package:intens_fl/screens/layout_task/widgets/home_app_bar_widget.dart';
 
 class TelegramHomeScreen extends StatelessWidget {
@@ -18,15 +17,11 @@ class TelegramHomeScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (BuildContext context) {
-                return const TelegramSettings();
-              },
-            ));
+            Navigator.of(context).pushNamed("/telegram_settings");
           },
           child: const Text(
             "Telegram settings",
-            style: TextStyle(color: Colors.white70, fontSize: 26),
+            style: TextStyle(color: Colors.white, fontSize: 26),
           ),
         ),
       ),

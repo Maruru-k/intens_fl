@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/qr_screen.dart';
 import 'package:intens_fl/screens/layout_task/widgets/tool_bar_widget.dart';
 
 class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
@@ -53,24 +52,21 @@ class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
         ),
       ),
       leading: Container(
-          margin: const EdgeInsets.all(8),
-          alignment: Alignment.topLeft,
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back_outlined),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            iconSize: 24,
-          )),
+        margin: const EdgeInsets.all(8),
+        alignment: Alignment.topLeft,
+        child: IconButton(
+          icon: const Icon(Icons.arrow_back_outlined),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          iconSize: 24,
+        ),
+      ),
       actions: [
         ToolBarWidget(
             icon: Icons.qr_code_outlined,
             onPressedFunction: () {
-              Navigator.push(context, MaterialPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const QrCodeScreenWidget();
-                },
-              ));
+              Navigator.of(context).pushNamed("/qr_screen");
             }),
         ToolBarWidget(
           icon: Icons.search_outlined,
