@@ -18,7 +18,7 @@ class TelegramHomeScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(NavigationKeys.telegramSettings);
+            Navigator.of(context).pushNamed(NavigationKeys.settingsScreen);
           },
           child: const Text(
             "Telegram settings",

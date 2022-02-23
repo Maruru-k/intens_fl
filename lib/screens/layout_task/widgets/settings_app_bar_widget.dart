@@ -67,11 +67,13 @@ class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
         ToolBarWidget(
             icon: Icons.qr_code_outlined,
             onPressedFunction: () {
-              Navigator.of(context).pushNamed(NavigationKeys.qrCode);
+              Navigator.of(context).pushNamed(NavigationKeys.qrCodeScreen);
             }),
         ToolBarWidget(
           icon: Icons.search_outlined,
-          onPressedFunction: () {},
+          onPressedFunction: () {
+            Navigator.of(context).pushNamed(NavigationKeys.searchScreen);
+          },
         ),
         ToolBarWidget(
           icon: Icons.more_vert,

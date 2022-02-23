@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intens_fl/screens/intens_task/noble_gas/noble_gas_screen.dart';
 import 'package:intens_fl/screens/intens_task/olimpics/olympics22.dart';
-import 'package:intens_fl/screens/layout_task/home_screen.dart';
 import 'package:intens_fl/screens/layout_task/project_data/navigation_data.dart';
-import 'package:intens_fl/screens/layout_task/qr_screen.dart';
-import 'package:intens_fl/screens/layout_task/telegram_settings_screen.dart';
 
 void main() {
   runApp(const MyApp());

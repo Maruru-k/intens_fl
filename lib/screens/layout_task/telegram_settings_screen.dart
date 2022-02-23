@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intens_fl/screens/layout_task/project_data/rows_data.dart';
 import 'package:intens_fl/screens/layout_task/widgets/account_column_widget.dart';
-import 'package:intens_fl/screens/layout_task/widgets/app_bar_widget.dart';
+import 'package:intens_fl/screens/layout_task/widgets/settings_app_bar_widget.dart';
 import 'package:intens_fl/screens/layout_task/widgets/column_row_widget.dart';
-import 'package:intens_fl/screens/layout_task/widgets/searc_panel_widget.dart';
+import 'package:intens_fl/screens/layout_task/searc_screen.dart';
 
 class TelegramSettings extends StatelessWidget {
   const TelegramSettings({Key? key}) : super(key: key);

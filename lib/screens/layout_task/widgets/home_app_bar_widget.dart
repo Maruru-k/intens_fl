@@ -57,13 +57,15 @@ class HomeAppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
             align: Alignment.centerRight,
             icon: Icons.settings_outlined,
             onPressedFunction: () {
-              Navigator.of(context).pushNamed(NavigationKeys.telegramSettings);
+              Navigator.of(context).pushNamed(NavigationKeys.settingsScreen);
             }),
         ToolBarWidget(
           width: 40,
           align: Alignment.centerRight,
           icon: Icons.search_outlined,
-          onPressedFunction: () {},
+          onPressedFunction: () {
+            Navigator.of(context).pushNamed(NavigationKeys.searchScreen);
+          },
         ),
         ToolBarWidget(
           width: 40,

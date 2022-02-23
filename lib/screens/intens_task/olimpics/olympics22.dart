@@ -109,9 +109,9 @@ class Country {
 class MedalStandings extends StatelessWidget {
   final List<String> olympics2022 = [
     'Страна',
-    'G',
-    'S',
-    'B',
+    'Gold',
+    'Silver',
+    'Bronze',
     'Total',
     'Норвегия',
     '16',
