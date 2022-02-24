@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/data_project/navigation_data.dart';
-import 'package:intens_fl/screens/layout_task/widgets/tool_bar_widget.dart';
+import 'package:intens_fl/layout_task/data_project/navigation_data.dart';
+import 'package:intens_fl/layout_task/widgets/tool_bar_widget.dart';
 
 class HomeAppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
   final NetworkImage _profileImage;

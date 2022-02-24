@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/data_project/rows_data.dart';
-import 'package:intens_fl/screens/layout_task/screens/settings/settings_widget/account_column_widget.dart';
-import 'package:intens_fl/screens/layout_task/screens/settings/settings_widget/column_row_widget.dart';
-import 'package:intens_fl/screens/layout_task/screens/settings/settings_widget/settings_app_bar_widget.dart';
+import 'package:intens_fl/layout_task/data_project/rows_data.dart';
+import 'package:intens_fl/layout_task/screens/settings/settings_widget/account_column_widget.dart';
+import 'package:intens_fl/layout_task/screens/settings/settings_widget/column_row_widget.dart';
+import 'package:intens_fl/layout_task/screens/settings/settings_widget/settings_app_bar_widget.dart';
 
 class TelegramSettings extends StatelessWidget {
   const TelegramSettings({Key? key}) : super(key: key);

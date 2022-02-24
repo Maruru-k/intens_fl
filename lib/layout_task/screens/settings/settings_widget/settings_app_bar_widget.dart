@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/data_project/navigation_data.dart';
-import 'package:intens_fl/screens/layout_task/data_project/rows_data.dart';
-import 'package:intens_fl/screens/layout_task/widgets/popup_menu_item_builder.dart';
-import 'package:intens_fl/screens/layout_task/widgets/tool_bar_widget.dart';
+import 'package:intens_fl/layout_task/data_project/navigation_data.dart';
+import 'package:intens_fl/layout_task/data_project/rows_data.dart';
+import 'package:intens_fl/layout_task/widgets/popup_menu_item_builder.dart';
+import 'package:intens_fl/layout_task/widgets/tool_bar_widget.dart';
 
 class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
   final NetworkImage _profileImage;
