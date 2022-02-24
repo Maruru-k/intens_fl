@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/project_data/rows_data.dart';
+import 'package:intens_fl/screens/layout_task/data_project/rows_data.dart';
 
 class ColumnRowsWidget extends StatelessWidget {
   final String? title;
   final List<RowData> rowData;
-  final BorderSide borderColorSet;
+  final BorderSide? borderColorSet;
 
   final TextStyle rowsTextStyle =
       const TextStyle(fontSize: 14, color: Colors.black);
@@ -15,7 +15,7 @@ class ColumnRowsWidget extends StatelessWidget {
     Key? key,
     String? title,
     required this.rowData,
-    required this.borderColorSet,
+    this.borderColorSet,
   })  : title = title ?? "",
         super(key: key);
 

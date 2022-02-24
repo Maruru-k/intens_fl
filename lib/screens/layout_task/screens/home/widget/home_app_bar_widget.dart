@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/project_data/navigation_data.dart';
+import 'package:intens_fl/screens/layout_task/data_project/navigation_data.dart';
 import 'package:intens_fl/screens/layout_task/widgets/tool_bar_widget.dart';
 
-class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
+class HomeAppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
   final NetworkImage _profileImage;
   final String _fullName;
 
-  const AppBarPanelWidget({
+  const HomeAppBarPanelWidget({
     Key? key,
     required NetworkImage profileImage,
     required String fullName,
@@ -22,21 +22,20 @@ class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
   @override
   AppBar build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 144,
+      toolbarHeight: 80,
       automaticallyImplyLeading: true,
       backgroundColor: Theme.of(context).colorScheme.primary,
       titleTextStyle: const TextStyle(color: Colors.black38, fontSize: 17),
       flexibleSpace: Container(
-        margin: const EdgeInsets.only(bottom: 12),
         alignment: Alignment.bottomLeft,
         child: SizedBox(
           height: 80,
           child: Row(
             children: [
               Container(
-                  margin: const EdgeInsets.only(left: 18, right: 20),
-                  child:
-                      CircleAvatar(radius: 30, backgroundImage: _profileImage)),
+                margin: const EdgeInsets.only(left: 18, right: 20),
+                child: CircleAvatar(radius: 30, backgroundImage: _profileImage),
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -52,39 +51,28 @@ class AppBarPanelWidget extends StatelessWidget with PreferredSizeWidget {
           ),
         ),
       ),
-      leading: Container(
-        margin: const EdgeInsets.all(8),
-        alignment: Alignment.topLeft,
-        child: IconButton(
-          icon: const Icon(Icons.arrow_back_outlined),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          iconSize: 24,
-        ),
-      ),
       actions: [
         ToolBarWidget(
-            icon: Icons.qr_code_outlined,
+            width: 40,
+            align: Alignment.centerRight,
+            icon: Icons.settings_outlined,
             onPressedFunction: () {
-              Navigator.of(context).pushNamed(NavigationKeys.qrCodeScreen);
+              Navigator.of(context).pushNamed(NavigationKeys.settingsScreen);
             }),
         ToolBarWidget(
+          width: 40,
+          align: Alignment.centerRight,
           icon: Icons.search_outlined,
           onPressedFunction: () {
             Navigator.of(context).pushNamed(NavigationKeys.searchScreen);
           },
         ),
-        ToolBarWidget(
-          icon: Icons.more_vert,
-          onPressedFunction: () {},
-        )
       ],
     );
   }
 
   @override
   Size get preferredSize {
-    return const Size(double.infinity, 144);
+    return const Size(double.infinity, 80);
   }
 }

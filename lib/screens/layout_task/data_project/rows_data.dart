@@ -85,6 +85,24 @@ final List<RowData> helpRowData = [
   ),
 ];
 
+final List<RowData> columnPopupMenuData = [
+  RowData(
+    icon: Icons.edit_outlined,
+    text: "Изменить имя",
+    onTapFunction: () {},
+  ),
+  RowData(
+    icon: Icons.add_a_photo_outlined,
+    text: "Выбрать фотографию",
+    onTapFunction: () {},
+  ),
+  RowData(
+    icon: Icons.exit_to_app_outlined,
+    text: "Выход",
+    onTapFunction: () {},
+  ),
+];
+
 final List<AccountData> accountRowData = [
   AccountData(
     text: "+7 (938) 200-39-01",

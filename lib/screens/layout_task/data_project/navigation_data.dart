@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/home_screen.dart';
-import 'package:intens_fl/screens/layout_task/qr_screen.dart';
-import 'package:intens_fl/screens/layout_task/searc_screen.dart';
-import 'package:intens_fl/screens/layout_task/telegram_settings_screen.dart';
+import 'package:intens_fl/screens/layout_task/screens/settings/qr_screen.dart';
+import 'package:intens_fl/screens/layout_task/screens/home/home_screen.dart';
+import 'package:intens_fl/screens/layout_task/screens/search_screen/searc_screen.dart';
+import 'package:intens_fl/screens/layout_task/screens/settings/telegram_settings_screen.dart';
 
 class NavigationKeys {
   static const String homeScreen = "/";

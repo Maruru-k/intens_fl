@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/project_data/rows_data.dart';
+import 'package:intens_fl/screens/layout_task/data_project/rows_data.dart';
 
 class AccountColumnWidget extends StatelessWidget {
   final String? title;

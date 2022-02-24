@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intens_fl/screens/layout_task/project_data/navigation_data.dart';
-import 'package:intens_fl/screens/layout_task/widgets/home_app_bar_widget.dart';
+import 'package:intens_fl/screens/layout_task/data_project/navigation_data.dart';
+import 'package:intens_fl/screens/layout_task/screens/home/widget/home_app_bar_widget.dart';
 
 class TelegramHomeScreen extends StatelessWidget {
   const TelegramHomeScreen({Key? key}) : super(key: key);
