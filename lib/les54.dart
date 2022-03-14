@@ -6,17 +6,14 @@ class Example extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            minWidth: 70,
-            minHeight: 70,
-            maxWidth: 150,
-            maxHeight: 150,
-          ),
-          child: Container(color: Colors.green, width: 5000, height: 5000),
-        ),
+        body: Center(
+      child: Container(
+        color: Colors.orange,
+        width: 200,
+        height: 200,
+        child: FittedBox(
+            child: Container(color: Colors.blue, width: 300, height: 30)),
       ),
-    );
+    ));
   }
 }
