@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intens_fl/layout_task/data_project/navigation_data.dart';
 import 'package:intens_fl/les54.dart';
+import 'package:intens_fl/les63_stful/scroll.dart';
+import 'package:intens_fl/les63_stful/stful.dart';
 import 'package:intens_fl/my_stack.dart';
 import 'package:intens_fl/screens/intens_task/noble_gas/noble_gas_screen.dart';
 import 'package:intens_fl/screens/intens_task/olimpics/olympics22.dart';
 
-import 'scroll_text.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,10 +32,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       // theme: ThemeData(colorScheme: const ColorScheme.dark(primary: Color(0xff1f2d3b))),
       debugShowCheckedModeBanner: false,
-      home: MyStack(),
+      home: ScrollText(),
+        // Column(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     MyStatefull(step: 8),
+        //     const SizedBox(height: 8),
+        //     MyStatefull(step: -10),
+        //     const SizedBox(height: 8),
+        //     MyStatefull(step: 1),
+        //   ],
+        // ),
       title: "Hell o",
     );
   }
