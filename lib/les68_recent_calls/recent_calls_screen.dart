@@ -13,7 +13,7 @@ class RecentCalls extends StatelessWidget {
       body: ListView.separated(
         padding: const EdgeInsets.symmetric(vertical: 10),
         physics: const BouncingScrollPhysics(),
-        itemCount: 15,
+        itemCount: 30,
         itemBuilder: (context, _) => const CallCard(),
         separatorBuilder: (context, _) => const Padding(
           padding: EdgeInsets.only(left: 55),

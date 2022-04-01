@@ -3,6 +3,7 @@ import 'package:intens_fl/layout_task/data_project/navigation_data.dart';
 import 'package:intens_fl/les54.dart';
 import 'package:intens_fl/les63_stful/scroll.dart';
 import 'package:intens_fl/les63_stful/stful.dart';
+import 'package:intens_fl/les68_recent_calls/empty_page.dart';
 import 'package:intens_fl/les68_recent_calls/recent_calls_screen.dart';
 import 'package:intens_fl/my_stack.dart';
 import 'package:intens_fl/screens/intens_task/noble_gas/noble_gas_screen.dart';
@@ -34,11 +35,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       // theme: ThemeData(colorScheme: const ColorScheme.dark(primary: Color(0xff1f2d3b))),
       debugShowCheckedModeBanner: false,
-      home: RecentCalls(),
-      title: "Hell o",
+      initialRoute: "/",
+      routes: {
+        "/":(context)=> const RecentCalls(),
+        "/empty":(context)=> const EmptyPage(),
+      },
     );
   }
 }
